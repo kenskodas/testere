@@ -30,7 +30,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ["*","leobonus.biz"]
+ALLOWED_HOSTS = ["*","https://leobonus.biz"]
 
 
 # Application definition
