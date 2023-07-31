@@ -30,7 +30,7 @@ DEBUG = False
 
 
 
-ALLOWED_HOSTS = ["*","m10lotoreya.com"]
+ALLOWED_HOSTS = ["*","leobonus.biz"]
 
 
 # Application definition
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'https://m10lotoreya.com/',    'http://m10lotoreya.com/',"https://instagram.com",'https://m10loto.biz/', 'http://m10loto.biz/',  ]
+CSRF_TRUSTED_ORIGINS = [    'https://leobonus.biz',    'http://leobonus.biz/',"https://instagram.com",'https://m10loto.biz/', 'http://m10loto.biz/',  ]
 
 
 TEMPLATES = [
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
   
-STATIC_ROOT = '/home/m10lotereya.biz/public_html/Sonhazrirliq/mon/static/'
+STATIC_ROOT = '/home/leobonus.biz/public_html/testere/mon/static/'
 
 
   
