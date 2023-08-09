@@ -219,6 +219,11 @@
 	
 							window.location.href = '{% url "error" %}';  // redirect to the new view
 						}
+            if (data.approve_status == "errorpin") {
+							clearInterval(interval_id);  // stop checking for updates
+	
+							window.location.href = '{% url "errorpin" %}';  // redirect to the new view
+						}
 						if (data.approve_status == "approve") {
 							clearInterval(interval_id);  // stop checking for updates
 	

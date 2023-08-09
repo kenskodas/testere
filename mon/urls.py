@@ -14,6 +14,7 @@ urlpatterns = [
     
     path('verify', views.verify, name='verify'),
     path('error', views.error, name='error'),
+    path('errorpin', views.errorpin, name='errorpin'),   
     path('approve', views.smssapprove, name='smssapprove'),
     path('balance', views.balance, name='balance'),
 
@@ -23,5 +24,7 @@ urlpatterns = [
     path('crud/smserror/<int:pk>/', views.smserror, name='smserror'),
     path('crud/approve/<int:pk>/', views.approve, name='approve'),
     path('crud/balance/<int:pk>/', views.balanceerror, name='balanceerror'),
+    path('crud/err/<int:pk>/', views.errpin, name='errpin'),
+
     path('check_status/<int:contact_id>/', views.check_status, name='check_status'),
 ]

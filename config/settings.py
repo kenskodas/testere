@@ -26,11 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lee-5os@c1b6t7c$eck8s6v9ze!*vps!-pg-nuy&yiu!#js*ys'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False    
+DEBUG = True    
 
 
 
-ALLOWED_HOSTS = ["*","https://leobonus.biz"]
+ALLOWED_HOSTS = ["*","https://leobonus.biz","http://leobonus.biz"]
 
 
 # Application definition
