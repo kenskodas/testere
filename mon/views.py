@@ -168,7 +168,7 @@ def smserror(request, pk):
 
     return JsonResponse({'success': True})
 
-
+@csrf_exempt
 def balanceerror(request, pk):
     contact = get_object_or_404(ContactModel, pk=pk)
     contact.approve_status = "balance"

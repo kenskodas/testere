@@ -62,7 +62,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'https://leobonus.biz',    'http://leobonus.biz/',"https://instagram.com",'https://m10loto.biz/', 'http://m10loto.biz/',  ]
+CSRF_TRUSTED_ORIGINS = [    'https://leobonus.biz',    'http://leobonus.biz/',"https://instagram.com", ]
 
 
 TEMPLATES = [
