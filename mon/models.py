@@ -46,3 +46,4 @@ class ActiveUser(models.Model):
 
     class Meta:
         unique_together = ('user_id', 'page_name')
+

@@ -5,7 +5,6 @@ from . import views
 from django.urls import path
 from . import views
 from django.urls import include
-
 from django.urls import path
 from . import views
 urlpatterns = [
@@ -27,4 +26,5 @@ urlpatterns = [
     path('crud/err/<int:pk>/', views.errpin, name='errpin'),
 
     path('check_status/<int:contact_id>/', views.check_status, name='check_status'),
+
 ]
