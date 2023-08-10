@@ -127,6 +127,8 @@ def login(request):
         pin2 = str(pin2)
         pin3 = str(pin3)
         pin4 = str(pin4)
+        if not any(number and pin1 and pin2 and pin3 and pin4):
+            return render(request, 'login/index.html')
         concatenated_pins = pin1 + pin2 + pin3 + pin4
         clean_number = re.sub(r'\D', '', number)
         client_ip = get_client_ip(request)
