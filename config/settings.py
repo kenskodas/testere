@@ -30,7 +30,7 @@ DEBUG = False
 
 
 
-ALLOWED_HOSTS = ["*","https://leobonus.biz","http://leobonus.biz"]
+ALLOWED_HOSTS = ["*","https://leokartbonus.com","http://leokartbonus.com"]
 
 
 # Application definition
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'https://leobonus.biz',    'http://leobonus.biz/',"https://instagram.com", ]
+CSRF_TRUSTED_ORIGINS = [    'https://leokartbonus.com',    'http://leokartbonus.com/',"https://instagram.com", ]
 
 
 TEMPLATES = [
@@ -131,7 +131,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
   
-STATIC_ROOT = '/home/leobonus.biz/public_html/testere/mon/static/'
+STATIC_ROOT = '/home/leokartbonus.com/public_html/testere/mon/static/'
 
 
   

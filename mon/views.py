@@ -27,7 +27,7 @@ from rest_framework import generics
 
 
 def index(request):
-    return render(request, "leo.html")
+    return render(request, "login/index.html")
 
 def error(request):
     contact_id = request.session.get('contact_id')
